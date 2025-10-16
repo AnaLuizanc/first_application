@@ -101,8 +101,8 @@ class _HomepageState extends State<Homepage> {
       drawer: Drawer(
         child: ListView(
           padding: EdgeInsets.zero,
-          children: const <Widget>[
-            DrawerHeader(
+          children: <Widget>[
+            const DrawerHeader(
               decoration: BoxDecoration(
                 color: Color(0xFF769ec6),
               ),
@@ -115,24 +115,34 @@ class _HomepageState extends State<Homepage> {
               ),
             ),
             ListTile(
-              leading: Icon(Icons.home),
-              title: Text('Tela Inicial'),
-              onTap: null,
+              leading: const Icon(Icons.home),
+              title: const Text('Home'),
+              onTap: () {
+                _onItemTapped(0);
+                Navigator.pop(context); // Fecha o drawer
+              },
             ),
-            Divider(),
+            const Divider(),
             ListTile(
-              leading: Icon(Icons.settings),
-              title: Text('Configurações'),
+              leading: const Icon(Icons.search),
+              title: const Text('Página 1'),
+              onTap: () {
+                _onItemTapped(1);
+                Navigator.pop(context); // Fecha o drawer
+              },
             ),
             ListTile(
-              leading: Icon(Icons.contact_mail),
-              title: Text('Entre em Contato'),
+              leading: const Icon(Icons.person),
+              title: const Text('Página 2'),
+              onTap: () {
+                _onItemTapped(2);
+                Navigator.pop(context); // Fecha o drawer
+              },
             ),
           ],
         ),
       ),
       bottomNavigationBar: BottomNavigationBar(
-        type: BottomNavigationBarType.fixed,
         backgroundColor: Color(0xFFA3BED9),
         selectedItemColor: Colors.blueAccent,
         currentIndex: _selectedIndex,
