@@ -15,6 +15,23 @@ class _HomepageState extends State<Homepage> {
         backgroundColor: Color(0xFF4A7FB2),
         title: const Text('Tela Inicial'),
       ),
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[
+            Icon(
+              Icons.home_work_outlined,
+              size: 100,
+              color: Color(0xFF4A7FB2),
+            ),
+            SizedBox(height: 20),
+            Text(
+              'Bem-vindo(a) à Tela Inicial!',
+              style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+            ),
+          ],
+        ),
+      ),
       drawer: Drawer(
         child: ListView(
           padding: EdgeInsets.zero,
@@ -47,7 +64,25 @@ class _HomepageState extends State<Homepage> {
             ),
           ],
         ),
-
+      ),
+      bottomNavigationBar: BottomNavigationBar(
+        type: BottomNavigationBarType.fixed,
+        backgroundColor: Color(0xFFA3BED9),
+        selectedItemColor: Colors.blueAccent,
+        items:[
+          BottomNavigationBarItem(
+            icon: Icon(Icons.home),
+            label: 'Home',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.search),
+            label: 'Página 1',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.person),
+            label: 'Página 2',
+          ),
+        ],
       ),
     );
   }
